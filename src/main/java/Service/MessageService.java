@@ -13,7 +13,9 @@ public class MessageService {
     public MessageService() {
         this.dm = new DAOMessage();
     }
-
+    /*This method calls the insert method in the DAO class after checking the message_text parameters
+     * A message object is returned.
+     */
     public Message postMessage(Message newMessage) throws SQLException {
         if (dm.checkPostedBy(newMessage.getPosted_by()) == false || newMessage.getMessage_text() == ""
                 || newMessage.getMessage_text().length() > 255
@@ -25,7 +27,7 @@ public class MessageService {
         }
 
     }
-
+    /*This method returns an Arraylist containing all Message objects in the database */
     public ArrayList<Message> getMessageList() throws SQLException {
         ArrayList<Message> AllMessages = dm.getAllMessages();
         return AllMessages;

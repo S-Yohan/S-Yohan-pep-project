@@ -67,5 +67,7 @@ public class ConnectionUtil {
             }
         }
     }
+    public class getConnection {
+    }
 
 }
